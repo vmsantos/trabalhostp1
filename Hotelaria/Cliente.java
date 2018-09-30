@@ -15,7 +15,7 @@ public class Cliente {
 		//Verifica se o cliente é novo
 		private void verificaCliente() {
 	        
-			while (cad_internet == 3) {
+			while ((cad_internet != 1) && (cad_internet != 2)) {
 				System.out.println("Você tem reserva feita pela internet? (1 - Sim / 2 - Não)");
 				cad_internet = ler.nextInt(); 
 			}
@@ -23,7 +23,7 @@ public class Cliente {
 			if (cad_internet == 1) {
 				System.out.println("Ok, ");
 			}
-			else if (cad_internet == 1) {
+			else if (cad_internet == 2) {
 				System.out.println("É sua primeira locaçao! Preencha seus dados.");
 				
 				//Gerador de nº aleatórios: instância um objeto da classe Random usando o construtor padrão
