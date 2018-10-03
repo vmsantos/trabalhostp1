@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"Hotelaria","l":"Cliente"},{"p":"Hotelaria","l":"Fatura"},{"p":"Hotelaria","l":"Frigobar"},{"p":"Hotelaria","l":"Hotel"},{"p":"Hotelaria","l":"Quarto"}]
