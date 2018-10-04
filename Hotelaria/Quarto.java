@@ -34,6 +34,9 @@ public class Quarto {
 		if (op == 1) {
 			Frigobar quarto1 = new Frigobar();
 			quarto1.compraProduto(cpf);
+			
+			Fatura quarto1Fat = new Fatura();
+			quarto1Fat.addItemFatura(cpf, valor_diaria);
 		}
 		else {
 			System.out.println("Precisa comprar de algum serviço (1 - Sim/ 2- Não)");

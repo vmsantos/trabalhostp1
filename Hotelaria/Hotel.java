@@ -23,6 +23,7 @@ public class Hotel {
 		System.out.println("1 - Quarto reservado pela internet");
 		System.out.println("2 - Reservar um quarto");
 		System.out.println("3 - Comprar um produto");
+		System.out.println("4 - Quitar sua fatura");
 		System.out.println("");
 		System.out.println("#############################################");
 		

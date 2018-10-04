@@ -39,5 +39,15 @@ public class Fatura {
 		
 		if (valorNovo < 0.00)
 			valorNovo = valorAntigo;
+		
+		System.out.println("O valor da sua fatura é: R$ " + Double.toString(valorNovo));
+	}
+	
+	public void quitarFatura(String cpf){
+
+		double valorTotal;
+		
+		//soma de todas as faturas cadastradas para um cpf
+		
 	}
 }

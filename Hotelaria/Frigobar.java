@@ -6,7 +6,7 @@ public class Frigobar {
 
 	int  qtd_refigerante, qtd_cerveja, qtd_vodka, op;
 	double preco_refrigerante = 5.00, preco_cerveja = 7.00, preco_vodka = 10.00;
-	String cpf, nomFatura;
+	String cpf;
 	
 	Scanner ler = new Scanner(System.in);
 
@@ -26,24 +26,24 @@ public class Frigobar {
 		op = ler.nextInt();
 		
 				
-		System.out.println(nomFatura);
 		this.cpf = cpf;
 		
 		Fatura Fatura1 = new Fatura();
+		
 		switch (op) {
 		case 1:
-			nomFatura.addItemFatura(cpf, preco_refrigerante);
+			Fatura1.addItemFatura(cpf, preco_refrigerante);
 			break;
 
 		case 2:
-			nomFatura.addItemFatura(cpf, preco_cerveja);
+			Fatura1.addItemFatura(cpf, preco_cerveja);
 			break;
 		case 3:
-			nomFatura.addItemFatura(cpf, preco_cerveja);
+			Fatura1.addItemFatura(cpf, preco_cerveja);
 			break;
 
 		default:
 			break;
 		} 
 	}
-}
+}	
