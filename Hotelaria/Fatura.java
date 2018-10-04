@@ -5,6 +5,7 @@ import java.util.Random;
 public class Fatura {
 
 	int valor, vencimento, cliente;
+	private double valorInserido;
 	
 	public int incluiFatura(int id_cliente, int id_fatura) {
 		
@@ -29,13 +30,14 @@ public class Fatura {
 		return id_fatura;
 	}
 	
-	public int addItemFatura(int id_fatura, int valor, int valorInserido) {
+	public void addItemFatura(String cpf, double valor){
+		 //Buscar a fatura na base de dados quando houver integração com bancos
+		double valorAntigo = 0.00, valorNovo = 0.00, valorInserido = 0.00;
 		
-		int valorAntigo, valorNovo;
-		
-		valorAntigo = valor;
+		this.valorInserido = valor;
 		valorNovo = valorAntigo + valorInserido;
 		
-		return valorNovo;
+		if (valorNovo < 0.00)
+			valorNovo = valorAntigo;
 	}
 }
