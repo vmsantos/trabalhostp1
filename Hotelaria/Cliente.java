@@ -31,34 +31,34 @@ public class Cliente {
 		        	id_hospede = gerador.nextInt(100);
 		        }
 		        
-				PrimeiraLocacao(id_hospede);
+				PrimeiraLocacao(id_hospede, cpf);
 			}
 		}
 		
-		public void PrimeiraLocacao(int id_hospede) throws IOException{
+		public void PrimeiraLocacao(int id_hospede, String cpf) throws IOException{
 			//Formulário de cadatro de usuário
 			
 			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 			
 			System.out.println("Digite seu nome completo*");
 			try {
-				String nome = in.readLine();
+				in.readLine();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
 			System.out.println("Digite seu endereço:*");
-			String endereco = in.readLine();
+			in.readLine();
 			
 			System.out.println("Digite o número do seu RG:*");
-			String rg = in.readLine();
+			in.readLine();
 						
 			System.out.println("Digite o nome do seu banco:");	
-			String banco = in.readLine();
+			in.readLine();
 			
 			System.out.println("Digite sua conta:");
-			String conta = in.readLine();
+			in.readLine();
 			
 			this.cpf = cpf;
 			
