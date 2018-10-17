@@ -5,8 +5,9 @@ import java.util.Random;
 public class Fatura {
 
 	int valor, vencimento, cliente;
-    double valorInserido;
-	public int incluiFatura(int id_cliente, int id_fatura, int valor, int vencimento) {
+	private double valorInserido;
+	
+	public int incluiFatura(int id_cliente, int id_fatura) {
 		
 		this.cliente = id_cliente;
 		this.valor = valor;
@@ -14,7 +15,7 @@ public class Fatura {
 		
 		if (id_fatura == 0 || id_fatura == 00 || id_fatura == 000 ) {
 			
-			//Gera o id_fatura (nï¿½ aleatï¿½rio)
+			//Gera o id_fatura (nº aleatório)
 			Random gerador = new Random();
 	        for (int i = 0; i < 100; i++) {
 	        	id_fatura = gerador.nextInt(100);
@@ -30,22 +31,25 @@ public class Fatura {
 	}
 	
 	public void addItemFatura(String cpf, double valor){
-		 //Buscar a fatura na base de dados quando houver integraï¿½ï¿½o com bancos
+		 //Buscar a fatura na base de dados quando houver integração com bancos
 		double valorAntigo = 0.00, valorNovo = 0.00, valorInserido = 0.00;
+		
 		this.valorInserido = valor;
 		valorNovo = valorAntigo + valorInserido;
 		
 		if (valorNovo < 0.00)
 			valorNovo = valorAntigo;
 		
-		System.out.println("O valor da sua fatura ï¿½: R$ " + Double.toString(valorNovo));
+		valorNovo = valor + valorAntigo;
+		
+		System.out.println("O valor da sua fatura é: R$ " + Double.toString(valorNovo));
 	}
 	
 	public void quitarFatura(String cpf){
+
+		double valorTotal;
 		
 		//soma de todas as faturas cadastradas para um cpf
-		double valorTotal;
-		valorTotal = 0.00;
-		System.out.println("O valor total das suas faturas ï¿½: R$ " + Double.toString(valorTotal));
+		
 	}
 }

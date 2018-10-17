@@ -32,7 +32,7 @@ public class Frigobar {
 		
 		switch (op) {
 		case 1:
-			Fatura1.addItemFatura(cpf, preco_refrigerante);
+			Fatura1.addItemFatura(cpf, 7.00);
 			break;
 
 		case 2:

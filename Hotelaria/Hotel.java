@@ -38,8 +38,8 @@ public class Hotel {
 		if (op == 1) {
 			System.out.println("Digite seu CPF:");
 			String cpf = in.readLine();
-			Cliente Cliente = new Cliente();
-			Cliente.verificaCliente(cpf);
+			Cliente Joao = new Cliente();
+			Joao.verificaCliente(cpf);
 			
 			
 		}else {
