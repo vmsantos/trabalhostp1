@@ -1,41 +1,42 @@
 package Hotelaria;
 
 import java.util.Scanner; //Lê dados da tela
+import Database.DatabaseConnection;
 import java.util.Random; //Gera números aleatórios
 import java.io.*;
+import java.sql.SQLException;
 
 public class Cliente {
 	
-	
-		int id_hospede, conta, cad_internet = 3;
+		int id_hospede, conta, cpf_internet;
 		String nome, endereco, banco, rg, cpf;
 		
 		Scanner ler = new Scanner(System.in);
 		
+		//Construtor Banco de dados
+		DatabaseConnection databaseConnection = new DatabaseConnection();		
         
 		//Verifica se há cadastro de internet
-		void verificaCliente(String cpf) throws IOException {
-			System.out.println("Ok, informe o número do cadastro de internet:");
-			cad_internet = ler.nextInt();
+		public int verificaCliente(String cpf) throws IOException, SQLException {
+			
+			int nro_quarto;
+			
+			System.out.println("Ok, informe o número do seu cpf:");
+			cpf_internet = ler.nextInt();
 			
 			//Parte a ser integrada com banco de dados
-			if (cad_internet == 100) {
-				System.out.println("Seu quarto reservado é o NÚMERO 02!");
+			if () {
+				System.out.println("Seu quarto reservado é o");
 			}
 			else {
 				System.out.println("É sua primeira locaçao! Preencha seus dados.");
-				
-				//Gerador de nº aleatórios: instância um objeto da classe Random usando o construtor padrão
-		        Random gerador = new Random();
-		        for (int i = 0; i < 100; i++) {
-		        	id_hospede = gerador.nextInt(100);
-		        }
-		        
 				PrimeiraLocacao(id_hospede);
 			}
+			
+			return 1;
 		}
 		
-		public void PrimeiraLocacao(int id_hospede) throws IOException{
+		public void PrimeiraLocacao(int id_hospede) throws IOException, SQLException{
 			//Formulário de cadatro de usuário
 			
 			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -54,6 +55,7 @@ public class Cliente {
 			System.out.println("Digite o número do seu RG:*");
 			String rg = in.readLine();
 						
+			//Adaptar o banco de dados para receber estes dados
 			System.out.println("Digite o nome do seu banco:");	
 			String banco = in.readLine();
 			
@@ -66,5 +68,13 @@ public class Cliente {
 			
 			Quarto quarto1 = new Quarto();
 			quarto1.AlugaQuarto(cpf);
+			
+			//Lança os dados de cadastro do cliente no banco de dados
+			databaseConnection.Connection();
+			//verifica se a camada de persistencia está conectada ao banco
+			if (databaseConnection != null) {
+				databaseConnection.insereCliente(rg, cpf, nome, endereco);
+				databaseConnection.desconectar();
+			}
 		}
 }
